@@ -59,7 +59,7 @@ export default function Movie() {
                     </div>
                     <button type='submit' className='btn btn-outline-success'>Search</button>
                     <button className='btn btn-outline-info mx-2' onClick={() => save(movie)}>Save</button>
-                    <Link className='btn btn-outline-success mx-2' to={`/history`}>My List</Link>
+                    <Link className='btn btn-outline-success' to={`/history`}>My List</Link>
                 </form>
                 <table className="table border shadow">
                     <thead>
