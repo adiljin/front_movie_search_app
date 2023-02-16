@@ -16,7 +16,7 @@ export default function History() {
 
     const loadMovies = async () => {
         let result = null;
-        result = await axios.get(`http://localhost:8080/movies`);
+        result = await axios.get(`http://localhost:8080/movies/get`);
         setMovie(result.data);
     };
 
@@ -64,7 +64,7 @@ export default function History() {
                                     <td>{moviee.Country}</td>
                                     <td>{moviee.Awards}</td>
                                     <td>{moviee.imdbRating}</td>
-                                    <td><img src={moviee.Poster} alt="Description of image" style={{ width: '100px', height: '100pxpx' }} /></td>
+                                    <td><img src={moviee.Poster} alt="Description of image" style={{ width: '100px', height: '150px' }} /></td>
                                     {/* <td>{moviee.Actors}</td>
                                     <td>{moviee.Rated}</td>
                                     <td>{moviee.Rated}</td> */}
