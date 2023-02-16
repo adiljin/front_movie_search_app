@@ -20,6 +20,18 @@ export default function History() {
         setMovie(result.data);
     };
 
+    const deleteMovie = async (id) => {
+        if (
+            window.confirm(
+            `Please confirm deletion`
+            ) === false
+        ) {
+            return;
+        }
+        await axios.delete(`http://localhost:8080/movies/${id}`)
+        loadMovies();
+    }
+
     return (
         <div className='container'>
             <Link className='btn btn-outline-success mx-2' to={`/`}>Back</Link>
@@ -50,7 +62,7 @@ export default function History() {
                             movie.map((moviee, index) =>
                                 <tr>
                                     <th scope="row" key={index}>{index + 1}</th>
-                                    {/* <td>{routee.id}</td> */}
+                                    {/* <td>{moviee.id}</td> */}
                                     <td>{moviee.Title}</td>
                                     <td>{moviee.Year}</td>
                                     <td>{moviee.Rated}</td>
@@ -65,6 +77,7 @@ export default function History() {
                                     <td>{moviee.Awards}</td>
                                     <td>{moviee.imdbRating}</td>
                                     <td><img src={moviee.Poster} alt="Description of image" style={{ width: '100px', height: '150px' }} /></td>
+                                    <td><button className='btn btn-outline-danger mx-2' onClick={() => deleteMovie(moviee.id)}>Delete</button></td>
                                     {/* <td>{moviee.Actors}</td>
                                     <td>{moviee.Rated}</td>
                                     <td>{moviee.Rated}</td> */}
