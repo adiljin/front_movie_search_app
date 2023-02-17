@@ -23,7 +23,7 @@ export default function History() {
     const deleteMovie = async (id) => {
         if (
             window.confirm(
-            `Please confirm deletion`
+                `Please confirm deletion`
             ) === false
         ) {
             return;
@@ -34,7 +34,7 @@ export default function History() {
 
     return (
         <div className='container'>
-            <Link className='btn btn-outline-dark mx-2 left-button float-start' to={`/`} >return</Link>
+            <Link className='btn btn-sm btn-outline-dark mx-2 left-button float-start' to={`/`} >return</Link>
             <div className='py-4'>
                 <table className="table border shadow">
                     <thead>
@@ -77,7 +77,7 @@ export default function History() {
                                     <td>{moviee.Awards}</td>
                                     <td>{moviee.imdbRating}</td>
                                     <td><img src={moviee.Poster} alt="Description of image" style={{ width: '100px', height: '150px' }} /></td>
-                                    <td><button className='btn btn-outline-dark mx-2' onClick={() => deleteMovie(moviee.id)}>X</button></td>
+                                    <td><button className='btn btn-sm btn-outline-dark mx-2' onClick={() => deleteMovie(moviee.id)}>X</button></td>
                                     {/* <td>{moviee.Actors}</td>
                                     <td>{moviee.Rated}</td>
                                     <td>{moviee.Rated}</td> */}

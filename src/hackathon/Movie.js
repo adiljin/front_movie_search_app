@@ -56,9 +56,9 @@ export default function Movie() {
                             value={nitle}
                             onChange={(e) => onInputChange(e)}
                         />
-                        <button type='submit' className='btn btn-outline-dark float-start'>Search</button>
-                        <button className='btn btn-outline-dark mx-2 float-start' onClick={() => save(movie)}>Save</button>
-                        <Link className='btn btn-outline-dark float-end' to={`/history`}>My List</Link>
+                        <button type='submit' className='btn btn-sm btn-outline-dark float-start'>Search</button>
+                        <button className='btn btn-sm btn-outline-dark mx-2 float-start' onClick={() => save(movie)}>Save</button>
+                        <Link className='btn btn-sm btn-outline-dark float-end' to={`/history`}>My List</Link>
                     </div>
 
                 </form>
