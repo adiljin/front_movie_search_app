@@ -56,10 +56,11 @@ export default function Movie() {
                             value={nitle}
                             onChange={(e) => onInputChange(e)}
                         />
+                        <button type='submit' className='btn btn-outline-dark float-start'>Search</button>
+                        <button className='btn btn-outline-dark mx-2 float-start' onClick={() => save(movie)}>Save</button>
+                        <Link className='btn btn-outline-dark float-end' to={`/history`}>My List</Link>
                     </div>
-                    <button type='submit' className='btn btn-outline-success'>Search</button>
-                    <button className='btn btn-outline-info mx-2' onClick={() => save(movie)}>Save</button>
-                    <Link className='btn btn-outline-success' to={`/history`}>My List</Link>
+
                 </form>
                 <table className="table border shadow">
                     <thead>
