@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom';
+import { SERVER_IP } from './Network';
 
 export default function Movie() {
     const [movie, setMovie] = useState([])
@@ -25,7 +26,8 @@ export default function Movie() {
         if (e.target.value !== "") {
             let result = null;
             let getTitle = title.nitle.replace(/\s+/g, "+");
-            result = await axios.get(`http://localhost:8080/movies/${getTitle}`);
+            // result = await axios.get(`http://localhost:8080/movies/${getTitle}`);
+            result = await axios.get(`http://${SERVER_IP}:3000/movies/${getTitle}`);
             setMovie(result.data);
         }
     }
@@ -36,7 +38,8 @@ export default function Movie() {
     }
 
     const save = async (movie) => {
-        await axios.post(`http://localhost:8080/movies`, movie);
+        // await axios.post(`http://localhost:8080/movies`, movie);
+        await axios.post(`http://${SERVER_IP}:3000/movies`, movie);
     }
 
     return (

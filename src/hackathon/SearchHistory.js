@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom';
+import { SERVER_IP } from './Network';
 
 export default function History() {
     const [movie, setMovie] = useState([])
@@ -16,7 +17,8 @@ export default function History() {
 
     const loadMovies = async () => {
         let result = null;
-        result = await axios.get(`http://localhost:8080/movies/get`);
+        // result = await axios.get(`http://localhost:8080/movies/get`);
+        result = await axios.get(`http://${SERVER_IP}:3000/movies/get`);
         setMovie(result.data);
     };
 
@@ -28,7 +30,8 @@ export default function History() {
         ) {
             return;
         }
-        await axios.delete(`http://localhost:8080/movies/${id}`)
+        // await axios.delete(`http://localhost:8080/movies/${id}`)
+        await axios.delete(`http://${SERVER_IP}:3000/movies/${id}`)
         loadMovies();
     }
 
