@@ -45,13 +45,10 @@ export default function Movie() {
                 <form onSubmit={(e) => onSubmit(e)}>
 
                     <div className='mb-3 text-start'>
-                        <label htmlFor='portName' className='form-label'>
-                            Type title
-                        </label>
                         <input
                             type={"text"}
                             className="form-control"
-                            placeholder="Enter route's name"
+                            placeholder="Enter movie's title"
                             name="nitle"
                             value={nitle}
                             onChange={(e) => onInputChange(e)}
